@@ -35,43 +35,17 @@
       
       
 
-      <table class="table table-hover">
-      <thead>
-        <tr>
-          <th scope="col">Drone Name</th>
-          <th scope="col">Brand</th>
-          <th scope="col">Serial</th>
-          <th scope="col">Associated Camera</th>
-        </tr>
-      </thead>
-      <tbody>
-          {% for drone in drones %}
-          <tr>
-            <th scope="row">{{drone.name}}</th>
-            <td>{{drone.brand}}</td>
-            <td>{{drone.serial_number}}</td>
-            <td>{{drone.associated_camera}}</td>
-          </tr>
-          {% endfor %}
-
-    
-    
     
     {% if user.is_authenticated %}
     
-      <tbody>
-          
-          <tr>
-            <th scope="row"><form><input type="text" name="" method="post"/>{% csrf_token %}{{ form.as_p }}</form></th>
-            <th scope="row"><form><input type="text" name="" method="post"/></form></th>
-            <th scope="row"><form><input type="text" name="" method="post"/></form></th>
-            <th scope="row"><form><input type="text" name="" method="post"/></form></th>
-          </tr>
-       
-      
-      </tbody>
-    </table>
-    <button type='submit'>Submit</button>
+    {% csrf_token %}
+    <form method='post'>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type='submit'>Submit</button>
+    </form>
+    
+   
     
     {% else %}
       <h1> please sign in</h1>

@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Drone(models.Model):
@@ -6,8 +7,14 @@ class Drone(models.Model):
     name = models.CharField(max_length=255)
     brand = models.CharField(max_length=21, choices=BRAND)
     serial_number = models.TextField(max_length=120)
-    #PLACE HOLDER FOR CAMERA MODEL LOOKUP
-    associated_camera = models.IntegerField() 
+    #PLACE HOLDER FOR CAMERA MODEL
+    associated_camera = models.IntegerField()
+    user = models.ForeignKey(User,None)
+
+        
+        
+    
+    
     
 class Camera(models.Model):
     """ camera options """
@@ -15,4 +22,5 @@ class Camera(models.Model):
     name = models.CharField(max_length=60)
     brand = models.CharField(max_length=21, choices=BRAND)
     megapixel = models.IntegerField()
+    user = models.ForeignKey(User,None)
     
