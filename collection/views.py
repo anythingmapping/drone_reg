@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from collection.models import Drone
 
 def index(request):
-    return render(request, 'index.html')
-    #return HttpResponse("Hello, world. You're at the polls index.")
+    drones = Drone.objects.all()
+    
+    return render(request, 'index.html', {'drones':drones})
