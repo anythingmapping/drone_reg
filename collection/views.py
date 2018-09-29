@@ -25,6 +25,11 @@ class DroneView(TemplateView):
             # process the data in form.cleaned_data as required
             # ...
             # redirect to a new URL:
+            post = form.save(commit=False)
+            post.user = request.user
+            post.save()
+            
+            
             return HttpResponseRedirect('/thanks/')
 
         # if a GET (or any other method) we'll create a blank form
