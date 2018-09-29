@@ -2,10 +2,11 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.generic import TemplateView
 from django.http import HttpResponseRedirect
+from django.contrib.auth import authenticate, login
+
 
 from collection.models import Drone
 from collection.forms import DroneForm
-
 
 
 class DroneView(TemplateView):
@@ -47,3 +48,20 @@ def index(request):
 
 def thanks(request):
     return render(request, 'thanks.html')
+    
+def login(request):
+    return render(request, 'login.html')
+    
+
+
+def loginView(request):
+    return render(request, 'login.html')
+    # username = request.POST['username']
+    # password = request.POST['password']
+    # user = authenticate(request, username=username, password=password)
+    # if user is not None:
+    #     login(request, user)
+    #     return render(request, 'thanks.html')
+    # else:
+    #     # Return an 'invalid login' error message.
+    #     return render(request, 'thanks.html')

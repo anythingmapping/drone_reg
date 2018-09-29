@@ -10,11 +10,7 @@ class Drone(models.Model):
     #PLACE HOLDER FOR CAMERA MODEL
     associated_camera = models.IntegerField()
     user = models.ForeignKey(User,None)
-
         
-        
-    
-    
     
 class Camera(models.Model):
     """ camera options """
