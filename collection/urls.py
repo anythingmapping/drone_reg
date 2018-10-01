@@ -12,5 +12,5 @@ urlpatterns = [
     path('thanks/',views.thanks, name='thanks'),
     
     #login page
-    path('login/',views.loginView, name='loginView'),
+    # path('login/',views.loginView, name='loginView'),
 ]
