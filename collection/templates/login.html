@@ -1,26 +1,27 @@
 {% extends 'base.html' %}
-{% load crispy_forms_tags %}
 
+{% load crispy_forms_tags %}
 
 {% block title %}Login{% endblock %}
 
 {% block content %}
 
   
-<form method="POST" action=" {% url %}">{% csrf_token %}
-  
-  <div class="container">
-    <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
+<form method="POST" action=" " enctype='multipart/form-data'>{% csrf_token %}
+{{ form|crispy }}
+<input type='submit' class='btn btn-default' value='login'/>
+  <!--<div class="container">-->
+  <!--  <label for="uname"><b>Username</b></label>-->
+  <!--  <input type="text" placeholder="Enter Username" name="uname" required>-->
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+  <!--  <label for="psw"><b>Password</b></label>-->
+  <!--  <input type="password" placeholder="Enter Password" name="psw" required>-->
 
-    <button type="submit">Login</button>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
-  </div>
+  <!--  <button type="submit">Login</button>-->
+  <!--  <label>-->
+  <!--    <input type="checkbox" checked="checked" name="remember"> Remember me-->
+  <!--  </label>-->
+  <!--</div>-->
 
   
 </form>

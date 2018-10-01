@@ -18,11 +18,11 @@ from django.contrib import admin
 from django.urls import include, path
 from django.conf.urls import url
 
-from accountUser.views import (login, logout)
+from accountUser.views import loginView, logoutView
 
 urlpatterns = [
     path('', include('collection.urls')),
     path('admin/', admin.site.urls),
-    url(r'^login/', login, name='login')
+    url(r'^login/', loginView, name='login')
 ]
 
