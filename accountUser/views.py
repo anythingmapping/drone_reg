@@ -23,4 +23,5 @@ def loginView(request):
     return render(request, "login.html", {"form":form, "title": title})
     
 def logoutView(request):
-    return render(request, "form.html", {}) 
+    logout(request)
+    return redirect("/")

@@ -22,7 +22,9 @@ from accountUser.views import loginView, logoutView
 
 urlpatterns = [
     path('', include('collection.urls')),
+    path('', include('accountUser.urls')),
     path('admin/', admin.site.urls),
-    url(r'^login/', loginView, name='login')
+    
+    
 ]
 
